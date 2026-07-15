@@ -7,4 +7,4 @@ build/
 dist/
 release/
 .build-venv/
-*.spec.local
+*.spec
