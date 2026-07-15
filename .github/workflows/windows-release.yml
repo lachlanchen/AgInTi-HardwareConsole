@@ -1,0 +1,46 @@
+name: Windows application
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install build dependencies
+        run: python -m pip install -r requirements-build.txt
+      - name: Generate icon
+        run: python scripts/build_icon.py
+      - name: Build portable application
+        shell: pwsh
+        run: |
+          pyinstaller --noconfirm --clean --windowed --onedir `
+            --contents-directory . `
+            --name AgInTi-HardwareConsole `
+            --icon assets/aginti-hardware-console.ico `
+            --add-data "assets;assets" `
+            --add-data "device_profiles;device_profiles" `
+            --add-data "schemas;schemas" `
+            --hidden-import serial.tools.list_ports `
+            main.py
+          Compress-Archive -Path dist/AgInTi-HardwareConsole/* -DestinationPath AgInTi-HardwareConsole-windows-x64.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AgInTi-HardwareConsole-windows-x64
+          path: AgInTi-HardwareConsole-windows-x64.zip
+      - uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: AgInTi-HardwareConsole-windows-x64.zip
+          generate_release_notes: true

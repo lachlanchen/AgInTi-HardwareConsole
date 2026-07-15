@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lazying.art/schemas/hardware-console/control-intent.schema.json",
+  "title": "Hardware Console Control Intent",
+  "type": "object",
+  "required": ["id", "device_id", "action", "status", "created_at", "parameters"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "device_id": {"type": "string", "minLength": 1},
+    "action": {"type": "string", "minLength": 1},
+    "status": {"enum": ["requested", "running", "completed", "failed", "cancelled"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": ["string", "null"], "format": "date-time"},
+    "parameters": {"type": "object"},
+    "result": {},
+    "error": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

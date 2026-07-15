@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aginti-hardwareconsole"
+version = "0.1.0"
+description = "A file-backed laboratory hardware digital twin and control workbench"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Lachlan Chen", email = "lach@lazying.art"}]
+keywords = ["hardware", "digital-twin", "stm32", "esp32", "instrumentation", "pyside6"]
+dependencies = [
+  "PySide6>=6.8",
+  "pyserial>=3.5"
+]
+
+[project.urls]
+Homepage = "https://lazying.art"
+Repository = "https://github.com/lachlanchen/AgInTi-HardwareConsole"
+Issues = "https://github.com/lachlanchen/AgInTi-HardwareConsole/issues"
+
+[project.scripts]
+aginti-hardware-console = "hardware_console.window:run"
+
+[tool.setuptools]
+packages = ["hardware_console"]

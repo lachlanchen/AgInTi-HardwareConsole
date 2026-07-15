@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+user-settings.json
+runtime/
+build/
+dist/
+release/
+.build-venv/
+*.spec.local
