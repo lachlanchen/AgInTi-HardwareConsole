@@ -1,5 +1,7 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://lazying.art)
+
 # AgInTi Hardware Console
 
 **실험실 하드웨어를 위한 파일 기반 디지털 트윈 및 제어 워크벤치입니다.**
@@ -18,3 +20,7 @@
 [Releases](https://github.com/lachlanchen/AgInTi-HardwareConsole/releases)에서 Windows 포터블 버전을 받을 수 있습니다. 시작 시 자동 플래시나 램프 점등을 하지 않습니다.
 
 [GitHub Sponsors](https://github.com/sponsors/lachlanchen) · [후원](https://chat.lazying.art/donate)
+
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://img.shields.io/badge/Donate-LazyingArt-0EA5E9?style=for-the-badge&logo=kofi&logoColor=white)](https://chat.lazying.art/donate) | [![PayPal](https://img.shields.io/badge/PayPal-RongzhouChen-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/RongzhouChen) | [![Stripe](https://img.shields.io/badge/Stripe-Donate-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
